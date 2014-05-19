@@ -5,3 +5,14 @@
 # then increment i
 # at the end, we swap i with the pivot to put pivot into proper place.
 # all about the in-place swaps
+
+
+# all list comprehensions FTW
+def qsort_lc(list):
+  if len(list) <=1:
+    return list
+
+  pivot = list[0]
+  less_than = qsort([n for n in list[1:] if n < pivot])
+  greater_than = qsort([n for n in list[1:] if n > pivot])
+  return (less_than + pivot + greater_than)
