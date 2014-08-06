@@ -18,6 +18,10 @@ class Heap
     kin
   end
 
+  # this is not ideal, as re-heapifying
+  # the input using siftdown is O n2 I think
+  # better would be 'delete' method on heap
+  # which performs siftUp
   def heapsort
     sorted = []
     (@repr.length-1).times do |e|
